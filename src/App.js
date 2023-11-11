@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CadastroPlaca from './components/CadastroPlaca';
+import GerarRelatorio from './components/GerarRelatorio';
+import ConsultarPlaca from './components/ConsultarPlaca.js';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ return (
+    <Router>
+      <Routes>
+        <Route path="/CadastroPlaca" element={<CadastroPlaca />} />
+        <Route path="/GerarRelatorio" element={<GerarRelatorio />} />
+        <Route path="/ConsultarPlaca" element={<ConsultarPlaca />} />
+      </Routes>
+    </Router>
+ );
 }
 
 export default App;
